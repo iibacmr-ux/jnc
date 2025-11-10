@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JN Consulting - Consultante en transformation digitale spécialisée e-facture. Accompagnement des cabinets comptables et PME pour la transition e-facture 2026.">
+    <meta name="keywords" content="e-facture, transformation digitale, cabinets comptables, PME, consulting">
+    <title>JN Consulting - Jocelyne Jouatsa | Experte Transformation Digitale &amp; E-facture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Theme */
+        :root {
+            --primary-terracotta: #C97547;
+            --secondary-indigo: #2D3E5F;
+            --accent-gold: #C9A961;
+            --background-beige: #F9F7F4;
+            --complement-sage: #4A7C7E;
+            --white: #FFFFFF;
+            --text-dark: #2D3E5F;
+            --text-light: #666666;
+            
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+            
+            --transition: all 0.3s ease;
+        }
+        
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background-beige);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--secondary-indigo);
+        }
+        
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+        h4 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .container-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        header.scrolled {
+            box-shadow: var(--shadow-sm);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-terracotta);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--accent-gold);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-indigo);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-terracotta);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--secondary-indigo);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-terracotta) 0%, var(--background-beige) 100%);
+            padding: 140px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="rgba(201,169,97,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text h1 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero-text .subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary-indigo);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-placeholder {
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--white);
+            border: 3px dashed rgba(255,255,255,0.4);
+            text-align: center;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+            text-align: center;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: var(--primary-terracotta);
+            color: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-primary:hover {
+            background: #b5643c;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--secondary-indigo);
+            border: 2px solid var(--secondary-indigo);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--secondary-indigo);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .btn-gold {
+            background: var(--accent-gold);
+            color: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-gold:hover {
+            background: #b89850;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-terracotta);
+            border: 2px solid var(--primary-terracotta);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-terracotta);
+            color: var(--white);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .about-placeholder {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, var(--complement-sage), var(--primary-terracotta));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .about-text h3 {
+            color: var(--primary-terracotta);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .credentials {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .credentials li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        
+        .credentials li::before {
+            content: '✓';
+            color: var(--primary-terracotta);
+            font-weight: bold;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        /* Services Section */
+        #offres {
+            background: var(--white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: var(--background-beige);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+            border: 2px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-terracotta);
+        }
+        
+        .service-card.featured {
+            background: linear-gradient(135deg, rgba(201,117,71,0.1), rgba(201,169,97,0.1));
+            border: 2px solid var(--accent-gold);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: var(--secondary-indigo);
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-duration {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .service-features li {
+            padding: 0.6rem 0;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        
+        .service-features li::before {
+            content: '•';
+            color: var(--primary-terracotta);
+            font-size: 1.5rem;
+        }
+        
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-terracotta);
+            margin: 1.5rem 0;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-left: 4px solid var(--accent-gold);
+        }
+        
+        .testimonial-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+        
+        .testimonial-header {
+            font-weight: 600;
+            color: var(--primary-terracotta);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .testimonial-quote {
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--secondary-indigo);
+            font-size: 0.95rem;
+        }
+        
+        .testimonials-badge {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+        
+        /* Diagnostic Section */
+        .diagnostic-section {
+            background: rgba(201,117,71,0.15);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            text-align: center;
+        }
+        
+        .diagnostic-section h2 {
+            color: var(--primary-terracotta);
+            margin-bottom: 1rem;
+        }
+        
+        .diagnostic-section .subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary-indigo);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .step {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .step-number {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step p {
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--secondary-indigo);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .trust-badge::before {
+            content: '✓';
+            color: var(--complement-sage);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background: var(--white);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-option {
+            background: var(--background-beige);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .contact-option h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-terracotta);
+        }
+        
+        .contact-option p {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: var(--secondary-indigo);
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 0.9rem;
+            border: 2px solid rgba(45,62,95,0.2);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background: var(--white);
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-terracotta);
+            box-shadow: 0 0 0 3px rgba(201,117,71,0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .contact-info {
+            margin-top: 3rem;
+            text-align: center;
+            padding: 2rem;
+            background: var(--background-beige);
+            border-radius: 12px;
+        }
+        
+        .contact-info a {
+            color: var(--primary-terracotta);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        
+        .contact-info a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--secondary-indigo);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-terracotta);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary-indigo);
+            color: var(--white);
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-terracotta);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-tagline {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .footer-social a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .footer-social a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content,
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="#" class="logo">JN <span>CONSULTING</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#offres">Offres</a></li>
+                <li><a href="#témoignages">Témoignages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transformez votre obligation e-facture en avantage compétitif</h1>
+                    <p class="subtitle">Consultante en transformation digitale, 10+ ans d'expérience. Accompagnement pragmatique pour cabinets comptables et PME.</p>
+                    <div class="hero-cta">
+                        <a href="https://typeform.com/diagnostic-jn" target="_blank" class="btn btn-primary">🎁 DIAGNOSTIC GRATUIT - Découvrez votre maturité e-facture</a>
+                        <a href="https://calendly.com/jocelyne-jouatsa" target="_blank" class="btn btn-secondary">Prendre un rendez-vous - 15 min</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-placeholder">Photo professionnelle<br>Jocelyne Jouatsa</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="a-propos">
+        <div class="container">
+            <div class="about-content fade-in">
+                <div class="about-image">
+                    <div class="about-placeholder">Photo professionnelle<br>chaleureuse</div>
+                </div>
+                <div class="about-text">
+                    <h3>Jocelyne Jouatsa - 10+ ans de transformation digitale</h3>
+                    <p>J'ai accompagné SNCF, AXA et Groupama dans leurs plus grandes transformations numériques. Aujourd'hui, j'aide les cabinets comptables et PME à transformer l'obligation e-facture en levier de croissance.</p>
+                    <ul class="credentials">
+                        <li>Experte certifiée transformation digitale</li>
+                        <li>Ancien lead du projet Chorus (État français, 2007-2013)</li>
+                        <li>Neutre éditeurs - conseils 100% alignés à vos besoins</li>
+                    </ul>
+                    <a href="https://linkedin.com/in/jocelyne-jouatsa" target="_blank" class="btn btn-gold">Voir mon profil LinkedIn complet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="offres">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Nos Formules d'Accompagnement</h2>
+                <p>Des solutions adaptées à chaque étape de votre transformation digitale</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔍</div>
+                    <h3>DIAGNOSTIC &amp; VISION</h3>
+                    <p class="service-duration">2-3 semaines</p>
+                    <ul class="service-features">
+                        <li>Audit cabinet</li>
+                        <li>Diagnostic clients</li>
+                        <li>Rapport synthèse</li>
+                    </ul>
+                    <div class="service-price">À partir de 2 500€</div>
+                    <a href="#contact" class="btn btn-outline">En savoir plus</a>
+                </div>
+                
+                <div class="service-card featured fade-in">
+                    <div class="featured-badge">⭐ LA PLUS POPULAIRE</div>
+                    <div class="service-icon">📊</div>
+                    <h3>ACCOMPAGNEMENT STRUCTURÉ</h3>
+                    <p class="service-duration">3-6 mois</p>
+                    <ul class="service-features">
+                        <li>Plan d'action</li>
+                        <li>Choix PDP</li>
+                        <li>Formation équipes</li>
+                        <li>Suivi indicateurs</li>
+                    </ul>
+                    <div class="service-price">À partir de 8 000€</div>
+                    <a href="#contact" class="btn btn-primary">En savoir plus</a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🚀</div>
+                    <h3>PARTENARIAT CONTINU</h3>
+                    <p class="service-duration">6-12 mois renouvelable</p>
+                    <ul class="service-features">
+                        <li>Pilotage stratégique</li>
+                        <li>Reporting mensuel</li>
+                        <li>Formations avancées</li>
+                        <li>Support continu</li>
+                    </ul>
+                    <div class="service-price">À partir de 1 500€/mois</div>
+                    <a href="#contact" class="btn btn-outline">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="témoignages">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Comment j'ai aidé les cabinets à transformer leur e-facture</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-header">Petit cabinet parisien - 5 associés</div>
+                    <p class="testimonial-quote">"Nous pensions qu'on aurait du travail fou. Jocelyne nous a organisés en 4 semaines. Aujourd'hui on gagne 1 jour par semaine. C'est dingue."</p>
+                    <div class="testimonial-author">— Jean-Paul M., Gérant cabinet comptable</div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-header">PME de services Toulouse</div>
+                    <p class="testimonial-quote">"On n'osait pas commencer. Avec le plan structuré, on a sécurisé toute notre équipe. Les clients voient qu'on maîtrise le sujet."</p>
+                    <div class="testimonial-author">— Marie T., DAF PME services</div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-header">Cabinet multi-expert Lyon</div>
+                    <p class="testimonial-quote">"Partenariat avec Jocelyne ? C'est plus qu'un consultant, c'est un allié pour la croissance. -25% d'erreurs, +30% de clients digitalisés."</p>
+                    <div class="testimonial-author">— Sophie R., Associée cabinet</div>
+                </div>
+            </div>
+            <div class="testimonials-badge fade-in">⭐⭐⭐⭐⭐ 12 projets complétés</div>
+        </div>
+    </section>
+
+    <!-- Diagnostic Section -->
+    <section id="diagnostic">
+        <div class="container">
+            <div class="diagnostic-section fade-in">
+                <h2>🎁 Diagnostic e-facture GRATUIT - Préparez votre transition</h2>
+                <p class="subtitle">Découvrez en 10 min votre niveau de maturité e-facture et les actions prioritaires pour votre cabinet</p>
+                
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1️⃣</div>
+                        <p>Remplissez le formulaire (5-10 min)</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2️⃣</div>
+                        <p>Recevez votre rapport de diagnostic personnalisé</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3️⃣</div>
+                        <p>Prenez 15 min avec Jocelyne pour discuter prochaines étapes</p>
+                    </div>
+                </div>
+                
+                <a href="https://typeform.com/diagnostic-jn" target="_blank" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 2.5rem;">👉 ACCÉDER AU DIAGNOSTIC GRATUIT</a>
+                
+                <div class="trust-badges">
+                    <div class="trust-badge">Gratuit - Aucun engagement</div>
+                    <div class="trust-badge">Résultats en 48h</div>
+                    <div class="trust-badge">Neutre éditeurs logiciels</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Discutons de votre transition e-facture</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-option fade-in">
+                    <h3>Option 1 : Prenez rendez-vous</h3>
+                    <p>Calendly - 15 min discovery call gratuit</p>
+                    <a href="https://calendly.com/jocelyne-jouatsa" target="_blank" class="btn btn-primary">Réserver un créneau</a>
+                </div>
+                
+                <div class="contact-option fade-in">
+                    <h3>Option 2 : Contactez-nous</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Téléphone</label>
+                            <input type="tel" id="telephone" name="telephone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="preference">Préférence</label>
+                            <select id="preference" name="preference">
+                                <option value="diagnostic">Diagnostic gratuit</option>
+                                <option value="rdv">RDV direct</option>
+                                <option value="devis">Devis</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="contact-info fade-in">
+                <p><strong>Email :</strong> <a href="mailto:contact@jnconsulting.com">contact@jnconsulting.com</a></p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/jocelyne-jouatsa" target="_blank">🔗 LinkedIn</a>
+                    <a href="mailto:contact@jnconsulting.com">✉️ Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">JN CONSULTING</div>
+            <p class="footer-tagline">Consultante en transformation digitale - E-facture 2026</p>
+            <div class="footer-social">
+                <a href="https://linkedin.com/in/jocelyne-jouatsa" target="_blank">LinkedIn</a>
+                <a href="mailto:contact@jnconsulting.com">Email</a>
+            </div>
+            <p class="copyright">© 2025 JN Consulting - Jocelyne Jouatsa. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Header shadow on scroll
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci ! Nous vous contacterons sous 48h.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
