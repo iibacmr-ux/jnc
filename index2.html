@@ -1,0 +1,581 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JN Consulting - Consultante en transformation digitale spécialisée e-facture. Accompagnement des cabinets comptables et PME pour la transition e-facture 2026.">
+    <meta name="keywords" content="e-facture, transformation digitale, cabinets comptables, PME, consulting">
+    <title>JN Consulting - Jocelyne Jouatsa | Experte Transformation Digitale & E-facture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --terracotta: #D85C27;
+            --terracotta-dark: #C04E1F;
+            --indigo: #1A2332;
+            --gold: #D4A574;
+            --beige: #FAF8F5;
+            --white: #FFF;
+            --sage: #5A7D6F;
+            --gray-text: #4A5568;
+            --footer-bg: #232A36;
+            --footer-gold: #FFD700;
+            --footer-beige: #F8F5F2;
+            --border-radius: 1.3rem;
+            --shadow-main: 0 12px 28px rgba(26,35,50,0.17);
+            --shadow-hover: 0 16px 40px rgba(26,35,50,0.24);
+            --transition: all .32s cubic-bezier(.4,0,.2,1);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0;}
+        body {
+            background: var(--beige);
+            color: var(--indigo);
+            font-family: 'Inter',sans-serif;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, .section-title {
+            font-family: 'Montserrat',sans-serif;
+        }
+        /* Header & Nav */
+        header {
+            width: 100vw;
+            background: var(--white);
+            box-shadow: 0 2px 16px rgba(26,35,50,0.06);
+            position: sticky; top: 0; z-index: 999;
+        }
+        .navbar {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1.3rem 2rem;
+        }
+        .logo {
+            color: var(--terracotta);
+            font-size: 1.7rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+        nav {
+            display: flex; align-items: center;
+            gap: 2.2rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--indigo);
+            padding: 0.2rem 0.6rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            border-radius: 5px;
+            transition: background var(--transition), color var(--transition);
+        }
+        nav a:hover, nav a.active {
+            background: linear-gradient(90deg,var(--terracotta),var(--gold));
+            color: var(--white);
+        }
+        /* Hamburger Nav */
+        .hamburger { display: none; flex-direction: column; cursor: pointer; }
+        .bar {height: 3px;width: 25px;background: var(--terracotta);margin:4px 0;border-radius:2px;}
+        @media(max-width:900px) {
+            nav {display:none;top:70px;}
+            nav.open { display:flex; flex-direction: column; position:absolute; background:var(--white); right:2rem;top:70px; box-shadow:0 8px 32px rgba(26,35,50,0.08);gap:0.8rem;padding:1.7rem 2rem;border-radius:1.2rem;}
+            .hamburger {display:flex;}
+        }
+        /* Hero */
+        .hero {
+            min-height: 92vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: linear-gradient(110deg, var(--terracotta) 0%, var(--beige) 90%);
+            position: relative;
+            text-align: center;
+            padding: 6rem 1rem 2rem 1rem;
+        }
+        .hero .badge {
+            display:inline-block;
+            background: var(--gold); color: var(--indigo);
+            font-weight: 700;
+            padding: 0.3rem 1.1rem;
+            font-size: 1.1rem;
+            border-radius: 2rem;
+            margin-bottom: 1.3rem;
+            letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 2.9rem;
+            font-weight: 900;
+            color: var(--indigo);
+            margin-bottom: 1.4rem;
+            letter-spacing: -0.5px;
+            line-height:1.18;
+        }
+        .hero h2 {
+            font-size: 1.38rem;
+            color: var(--indigo);
+            font-weight: 500;
+            margin-bottom: 1.6rem;
+            line-height: 1.32;
+        }
+        .hero-img {
+            display:flex; justify-content:center; align-items:center;
+            margin: 0.5rem 0 2.4rem 0;
+        }
+        .hero-img-placeholder {
+            width:128px; height:128px;
+            background: linear-gradient(140deg, var(--terracotta) 60%, var(--gold) 100%);
+            border-radius:50%;
+            display:flex; align-items:center; justify-content:center;
+            color:var(--white);
+            font-weight:700;
+            font-size:1.18rem; border:6px solid var(--white); box-shadow: var(--shadow-main);
+            margin-bottom:0.7rem;
+        }
+        .hero-cta-row {
+            display:flex;align-items:center;justify-content:center; gap: 1.4rem;
+            margin-bottom:1.3rem;
+            flex-wrap:wrap;
+        }
+        .btn-main {
+            background:linear-gradient(92deg,var(--terracotta),var(--terracotta-dark));
+            color: var(--white);
+            padding: 1.2rem 1.9rem;
+            border:none; border-radius: 2.3rem; font-size: 1.12rem;
+            font-weight: 700;
+            letter-spacing:0.5px;
+            cursor:pointer;box-shadow:var(--shadow-sm);
+            transition: transform .13s, box-shadow .18s, background .18s;
+            outline:none;
+        }
+        .btn-main:hover { transform: scale(1.05); box-shadow:var(--shadow-hover); background:linear-gradient(92deg,var(--terracotta-dark),var(--terracotta));}
+        .btn-outline {
+            background:transparent;
+            border:2px solid var(--indigo);
+            color: var(--indigo);
+            padding: 1.2rem 1.9rem;
+            border-radius:2.3rem;font-size:1.12rem; font-weight:600;
+            letter-spacing:.2px; cursor:pointer;
+            transition: color .18s, background .18s, border .18s;
+        }
+        .btn-outline:hover { background:var(--indigo); color:var(--white);}
+        .hero .hero-info {
+            margin-top:1.5rem; color:var(--gray-text);font-size:1.02rem;
+        }
+        /* Section layout */
+        section { padding:4rem 0; }
+        .container {max-width:1100px; margin:0 auto; padding:0 1.3rem;}
+        .section-title {font-size:2.12rem;font-weight:900;color:var(--indigo); margin-bottom:2.3rem;}
+        /* About */
+        .about-wrapper {display:grid; grid-template-columns:1fr 2.2fr; gap:2.3rem; align-items:center;}
+        .about-img-placeholder {
+            width:140px; height:140px; border-radius:50%;
+            background:linear-gradient(144deg,var(--gold) 30%,var(--terracotta) 100%);
+            display:flex;align-items:center;justify-content:center;
+            color:var(--white);font-weight:800;font-size:1.38rem; box-shadow: var(--shadow-main);
+            margin:0 auto;
+        }
+        .about-content h3 {font-size:1.23rem;color:var(--terracotta);font-weight:800;}
+        .about-content ul {list-style:none; margin:1.2rem 0 1.7rem 0; padding-left:0;}
+        .about-content li {display:flex;align-items:center;margin-bottom:0.7rem;font-size:1.08rem;}
+        .about-content li .icon {color:var(--terracotta);margin-right:0.8rem; font-size:1.26em;}
+        .about-content .btn-linkedin a {
+            background:var(--gold); color:var(--indigo);
+            font-weight:700; text-decoration:none; padding:0.9rem 1.5rem; border-radius:1.9rem;
+            transition:background .15s, color .15s;
+        }
+        .about-content .btn-linkedin a:hover { background:var(--indigo); color:var(--gold);}
+        @media(max-width:900px) {.about-wrapper{grid-template-columns:1fr;gap:2rem}}
+        /* Offres */
+        .offers-row {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+            gap:2.6rem;
+        }
+        .offer-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: 2.5rem 1.4rem 2.1rem 1.4rem;
+            border: 2px solid var(--beige);
+            transition: box-shadow .17s, border .17s, transform .13s;
+            position:relative; min-height: 340px;
+            display:flex;flex-direction:column;justify-content:space-between;
+        }
+        .offer-card.featured {
+            border:2.7px solid var(--gold);
+            box-shadow: 0 6px 24px rgba(212,165,116,0.18);
+        }
+        .offer-card .offer-badge {
+            position:absolute;top:0.20rem;right:0.20rem;
+            background: var(--gold); color: var(--indigo);border-radius:.95rem;
+            font-size:.92rem; font-weight:700; padding:.4rem 1.2rem; box-shadow:0 2px 8px rgba(212,165,116,0.08);
+            letter-spacing:.4px;
+        }
+        .offer-card h4{font-size:1.33rem;margin-bottom:0.9rem;color:var(--terracotta);}
+        .offer-card ul{list-style:none;padding:0;margin-bottom:1.5rem;}
+        .offer-card li{margin-bottom:0.7rem;}
+        .offer-card .offer-price {font-weight:700;color:var(--sage);font-size:1.11rem; margin-bottom:.8rem;}
+        .offer-card .btn-offer {
+            border: 2px solid var(--terracotta);
+            color: var(--terracotta);
+            background: transparent;
+            padding: 0.85rem 1.15rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            font-size:1.02rem;
+            transition: background .17s, color .17s, border .17s;
+            margin-top:0.5rem;
+            cursor:pointer;
+        }
+        .offer-card .btn-offer:hover {
+            background: var(--terracotta);
+            color: var(--white);
+            border-color: var(--terracotta);
+        }
+        /* Testimonials */
+        .testimonials-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 2.2rem;
+        }
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: 2.1rem 1.3rem 1.2rem 1.3rem;
+            border-left: 4.3px solid var(--terracotta);
+            min-height: 180px;
+        }
+        .testimonial-card .t-location {font-weight: 700;color:var(--gold);}
+        .testimonial-card .t-quote {margin:1.1rem 0;color:var(--gray-text); font-size:1.09rem;}
+        .testimonial-card .t-author {font-style:italic;color:var(--sage);font-weight:600;}
+        .testimonial-badge {
+            display: flex; align-items:center; justify-content:center; gap:.6rem;
+            margin-top: 1.6rem; font-size:1.17rem;
+            color: var(--gold);
+        }
+        /* Diagnostic gratuit */
+        .diagnostic-highlight {
+            background:linear-gradient(100deg, var(--terracotta) 0%, var(--beige) 80%);
+            border-radius: var(--border-radius); box-shadow:var(--shadow-sm);
+            padding: 2.7rem 1.5rem; margin-bottom: 2.7rem; text-align:center;
+            color:var(--indigo);
+        }
+        .diagnostic-highlight .diag-title {font-size:1.7rem;font-weight:900; margin-bottom:.85rem;}
+        .diagnostic-highlight .diag-subtitle {font-size:1.13rem; margin-bottom:1.7rem;}
+        .diagnostic-steps {display:flex;justify-content:center;gap:1.6rem;margin-bottom:1.2rem;flex-wrap:wrap;}
+        .diagnostic-step {
+            display:flex;flex-direction:column;align-items:center;padding:1rem 1.15rem;background:var(--white);border-radius:.85rem;box-shadow:0 2px 12px rgba(216,92,39,0.09);margin:6px;
+        }
+        .diagnostic-step .icon{font-size:2rem;margin-bottom:0.5rem;color:var(--terracotta);}
+        .diagnostic-highlight .btn-diag {
+            background: linear-gradient(86deg, var(--gold), var(--terracotta));
+            color: var(--indigo);
+            border:none;
+            border-radius:2.7rem;
+            font-weight:800;
+            font-size:1.12rem;
+            padding:1.07rem 2.17rem;
+            margin-top:.7rem;
+            box-shadow:0 3px 16px rgba(216,92,39,0.12);
+            letter-spacing:.5px;
+            transition:background .16s,color .16s,transform .15s;
+            cursor:pointer;
+        }
+        .diagnostic-highlight .btn-diag:hover {
+            background:linear-gradient(100deg, var(--terracotta), var(--gold));
+            color: var(--white);
+        }
+        .diag-features {
+            margin-top:1.43rem;
+            display:flex; align-items:center;justify-content:center;gap:2.8rem; flex-wrap:wrap;
+        }
+        .diag-feature {color:var(--terracotta);font-size:1.01rem;font-weight:600;display:flex;align-items:center;gap:.43rem;}
+        /* Contact */
+        .contact-row {display:flex;gap:2.8rem;align-items:flex-start;}
+        .contact-option {flex:1; background:var(--white);border-radius:var(--border-radius);box-shadow:var(--shadow-sm);padding:2.2rem;}
+        .contact-option h4 {color:var(--terracotta);}
+        .contact-form label {display:block;margin-top:1rem;font-weight:600;}
+        .contact-form input,.contact-form textarea,.contact-form select {
+            width:100%;padding:.78rem 1rem;border-radius:8px;border:1.7px solid var(--beige);margin-top:.4rem;
+            margin-bottom:1rem; font-size:1rem;
+            font-family:'Inter',sans-serif;
+            background:#FCFCFC;
+        }
+        .contact-form textarea {resize: vertical;min-height:72px;}
+        .contact-form button {
+            background:var(--terracotta);color:var(--white);border:none;
+            padding:0.9rem 1.53rem;border-radius:2rem;font-weight:700;font-size:1.06rem;
+            transition: background .15s,transform .14s;
+            cursor:pointer;
+            margin-top:.9rem;
+        }
+        .contact-form button:hover { background:var(--terracotta-dark); transform:scale(1.05);}
+        .contact-infos {
+            margin-top:2.7rem;text-align:center;
+            color:var(--indigo);
+        }
+        .socials a { display:inline-block; margin: 0 .8rem; color:var(--footer-gold); font-size:2rem; transition:color.14s;}
+        .socials a:hover { color: var(--terracotta); }
+        @media(max-width:850px){.contact-row{flex-direction:column;gap:2rem;}}
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            color: var(--footer-beige);
+            padding: 2.6rem 0 2.1rem 0;
+            text-align: center;
+        }
+        footer .footer-logo {
+            color: var(--terracotta);
+            font-weight: 900;
+            font-family:'Montserrat',sans-serif;
+            font-size:1.55rem;
+            letter-spacing:2px;
+        }
+        footer a { color: var(--footer-gold); text-decoration:none;font-weight:700;transition:color .12s;}
+        footer a:hover {color: var(--terracotta);}
+        footer .footer-desc {margin:.82rem 0 1.1rem 0;font-size:1.06rem;}
+        footer .footer-socials a {margin:0 0.7rem;font-size: 1.45rem;}
+        footer .footer-socials a {color:var(--footer-gold);}
+        footer .footer-socials a:hover{color:var(--terracotta);}
+        @media(max-width:700px) {
+            .hero h1{font-size:2.05rem;}
+            .hero-img-placeholder,.about-img-placeholder{width:94px;height:94px;font-size:1rem;}
+            .about-wrapper{gap:1.3rem;}
+            .offer-card{padding:1.5rem .7rem;}
+            .diagnostic-highlight{padding:1.1rem 0.4rem;}
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // Smooth scroll for anchor links
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', function(e){
+                    if(this.hash){
+                        e.preventDefault();
+                        document.querySelector(this.hash).scrollIntoView({behavior:'smooth'});
+                        document.querySelectorAll('nav a').forEach(l=>l.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Hamburger menu
+            const ham = document.querySelector('.hamburger');
+            ham.addEventListener('click',function(){
+                const nav = document.querySelector('nav');
+                nav.classList.toggle('open');
+            });
+
+            // Contact form (static, alert only)
+            document.getElementById('formContact').addEventListener('submit',function(e){
+                e.preventDefault();
+                alert('Merci ! Nous vous contacterons sous 48h.');
+                this.reset();
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">JN CONSULTING</div>
+            <div class="hamburger" tabindex="0" aria-label="Ouvrir le menu" role="button">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav>
+                <a href="#accueil" class="active">Accueil</a>
+                <a href="#a-propos">À propos</a>
+                <a href="#offres">Offres</a>
+                <a href="#temoignages">Témoignages</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero" id="accueil">
+            <div class="badge">E-facture 2026 - Obligatoire, soyez prêt</div>
+            <h1>Transformez votre obligation e-facture en avantage compétitif</h1>
+            <h2>Consultante en transformation digitale, 10+ ans d'expérience. Accompagnement pragmatique pour cabinets comptables et PME.</h2>
+            <div class="hero-img"><div class="hero-img-placeholder" 
+						   style="background-image: url('joyce-lkdin-main.jpeg'); 
+								  /* background-size: cover;      l’image remplit le cadre */
+								  /* background-size: contain;    l’image entière est visible */
+								  background-size: 100% 100%;  /* étire l’image */
+								  background-position: center; /* centrée */
+								  background-repeat: no-repeat; ">
+				
+			</div></div>
+            <div class="hero-cta-row">
+                <a href="https://typeform.com/diagnostic-jn" class="btn-main" target="_blank" rel="noopener">🎁 DIAGNOSTIC GRATUIT</a>
+                <a href="https://calendly.com/jocelyne-jouatsa" class="btn-outline" target="_blank" rel="noopener">Prendre un rendez-vous - 15 min</a>
+            </div>
+            <div class="hero-info">Diagnostic gratuit pour cabinets & PME - Réussissez votre transition sans stress</div>
+        </section>
+
+        <section id="a-propos">
+            <div class="container about-wrapper">
+                <div class="about-img-placeholder" 
+						   style="background-image: url('joyce-speak-room-people.jpeg'); 
+								  background-size: cover;      /* l’image remplit le cadre */
+								  /* background-size: contain;    l’image entière est visible */
+								  /* background-size: 100% 100%;  étire l’image */
+								  background-position: center; /* centrée */
+								  background-repeat: no-repeat; ">
+				</div>
+                <div class="about-content">
+                    <h3>Jocelyne Jouatsa - 10+ ans de transformation digitale</h3>
+                    <p>J'ai accompagné <b>SNCF</b>, <b>AXA</b> et <b>Groupama</b> dans leurs plus grandes transformations numériques.<br>
+                    Aujourd'hui, j'aide les cabinets comptables et PME à transformer l'obligation e-facture en levier de croissance.</p>
+                    <ul>
+                        <li><span class="icon">✓</span> Experte certifiée transformation digitale</li>
+                        <li><span class="icon">✓</span> Ancien lead du projet Chorus (État français, 2007-2013)</li>
+                        <li><span class="icon">✓</span> Neutre éditeurs - conseils 100% alignés à vos besoins</li>
+                    </ul>
+                    <div class="btn-linkedin"><a href="https://www.linkedin.com/in/jocelyne-jouatsa-pspo-300a8938" target="_blank" rel="noopener">Voir mon profil LinkedIn complet</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="offres">
+            <div class="container">
+                <div class="section-title">Nos Formules d'Accompagnement</div>
+                <div class="offers-row">
+                    <div class="offer-card">
+                        <h4>🔍 DIAGNOSTIC & VISION</h4>
+                        <ul>
+                            <li>Audit cabinet</li>
+                            <li>Diagnostic clients</li>
+                            <li>Rapport synthèse</li>
+                        </ul>
+                        <div class="offer-price">À partir de 2 500€</div>
+                        <button class="btn-offer" onclick="window.open('https://form.typeform.com/to/CfkquOq3','_blank')">En savoir plus</button>
+                    </div>
+                    <div class="offer-card featured">
+                        <div class="offer-badge">⭐ LA PLUS POPULAIRE</div>
+                        <h4>📊 ACCOMPAGNEMENT STRUCTURÉ</h4>
+                        <ul>
+                            <li>Plan d'action</li>
+                            <li>Choix PDP</li>
+                            <li>Formation équipes</li>
+                            <li>Suivi indicateurs</li>
+                        </ul>
+                        <div class="offer-price">À partir de 8 000€</div>
+                        <button class="btn-offer" onclick="window.open('https://form.typeform.com/to/CfkquOq3','_blank')">En savoir plus</button>
+                    </div>
+                    <div class="offer-card">
+                        <h4>🚀 PARTENARIAT CONTINU</h4>
+                        <ul>
+                            <li>Pilotage stratégique</li>
+                            <li>Reporting mensuel</li>
+                            <li>Formations avancées</li>
+                            <li>Support continu</li>
+                        </ul>
+                        <div class="offer-price">À partir de 1 500€/mois</div>
+                        <button class="btn-offer" onclick="window.open('https://form.typeform.com/to/CfkquOq3','_blank')">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="temoignages">
+            <div class="container">
+                <div class="section-title">Comment j'ai aidé les cabinets à transformer leur e-facture</div>
+                <div class="testimonials-row">
+                    <div class="testimonial-card">
+                        <div class="t-location">Petit cabinet parisien - 5 associés</div>
+                        <div class="t-quote">"Nous pensions qu'on aurait du travail fou. Jocelyne nous a organisés en 4 semaines. Aujourd'hui on gagne 1 jour par semaine. C'est dingue."</div>
+                        <div class="t-author">— Jean-Paul M., Gérant cabinet comptable</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="t-location">PME de services Toulouse</div>
+                        <div class="t-quote">"On n'osait pas commencer. Avec le plan structuré, on a sécurisé toute notre équipe. Les clients voient qu'on maîtrise le sujet."</div>
+                        <div class="t-author">— Marie T., DAF PME services</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="t-location">Cabinet multi-expert Lyon</div>
+                        <div class="t-quote">"Partenariat avec Jocelyne ? C'est plus qu'un consultant, c'est un allié pour la croissance. -25% d'erreurs, +30% de clients digitalisés."</div>
+                        <div class="t-author">— Sophie R., Associée cabinet</div>
+                    </div>
+                </div>
+                <div class="testimonial-badge">⭐⭐⭐⭐⭐ 12 projets complétés</div>
+            </div>
+        </section>
+
+        <section id="diagnostic">
+            <div class="container">
+                <div class="diagnostic-highlight">
+                    <div class="diag-title">🎁 Diagnostic e-facture GRATUIT - Préparez votre transition</div>
+                    <div class="diag-subtitle">Découvrez en 10 min votre niveau de maturité e-facture et les actions prioritaires pour votre cabinet</div>
+                    <div class="diagnostic-steps">
+                        <div class="diagnostic-step"><div class="icon">1️⃣</div>Remplissez le formulaire<br>(5-10 min)</div>
+                        <div class="diagnostic-step"><div class="icon">2️⃣</div>Recevez votre<br>rapport personnalisé</div>
+                        <div class="diagnostic-step"><div class="icon">3️⃣</div>Prenez 15 min avec Jocelyne</div>
+                    </div>
+                    <button class="btn-diag" onclick="window.open('https://form.typeform.com/to/CfkquOq3','_blank')">👉 ACCÉDER AU DIAGNOSTIC GRATUIT</button>
+                    <div class="diag-features">
+                        <div class="diag-feature">✓ Gratuit - Aucun engagement</div>
+                        <div class="diag-feature">✓ Résultats en 48h</div>
+                        <div class="diag-feature">✓ Neutre éditeurs logiciels</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="section-title">Discutons de votre transition e-facture</div>
+                <div class="contact-row">
+                    <div class="contact-option">
+                        <h4>Option 1 : Prenez rendez-vous</h4>
+                        <p><b>Calendly</b> — Appel découverte gratuit de 15 minutes</p><br/>
+                        <a href="https://calendly.com/jocelyne-jouatsa" target="_blank" class="btn-outline" rel="noopener">Réserver un créneau</a>
+                    </div>
+                    <div class="contact-option">
+                        <h4>Option 2 : Contactez-nous</h4>
+                        <form class="contact-form" id="formContact" autocomplete="off">
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" required>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <label for="tel">Téléphone</label>
+                            <input type="tel" id="tel" name="tel" pattern="[0-9+ ]*">
+                            <label for="msg">Votre demande</label>
+                            <textarea id="msg" name="msg" required></textarea>
+                            <label for="preference">Préférence</label>
+                            <select id="preference" name="preference">
+                                <option value="diagnostic">Diagnostic gratuit</option>
+                                <option value="rdv">RDV direct</option>
+                                <option value="devis">Demande de devis</option>
+                            </select>
+                            <button type="submit">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="contact-infos">
+                    <div><b>Mail :</b> <a href="mailto:contact@jnconsulting.com">contact@jnconsulting.com</a></div>
+                    <div class="socials" style="margin-top:.6rem;">
+                        <a href="https://www.linkedin.com/in/jocelyne-jouatsa-pspo-300a8938" target="_blank" aria-label="LinkedIn"><span title="LinkedIn">💼</span></a>
+                        <a href="mailto:contact@jnconsulting.com" aria-label="e-mail"><span title="E-mail">✉️</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-logo">JN CONSULTING</div>
+        <div class="footer-desc">Consultante en transformation digitale - E-facture 2026</div>
+        <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/jocelyne-jouatsa-pspo-300a8938" target="_blank" aria-label="LinkedIn"><span title="LinkedIn">💼</span></a>
+            <a href="mailto:contact@jnconsulting.com" aria-label="e-mail"><span title="E-mail">✉️</span></a>
+        </div>
+        <div style="margin-top:1.1rem;color:var(--footer-beige);font-size:.99rem;">
+            © 2025 JN Consulting - Jocelyne Jouatsa. Tous droits réservés.
+        </div>
+    </footer>
+</body>
+</html>
